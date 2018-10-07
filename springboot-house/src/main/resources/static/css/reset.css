@@ -1,0 +1,153 @@
+﻿@charset "utf-8";
+html, body, button, input, select, textarea {font: 12px/1.5 "\u5fae\u8f6f\u96c5\u9ed1", "\5FAE\8F6F\96C5\9ED1", tahoma, arial, "\5b8b\4f53", sans-serif;}
+body, 
+div,dl,dt,dd,ul,ol,li,
+h1,h2,h3,h4,h5,h6,pre,code,
+form,fieldset,legend,input,textarea,
+p,blockquote,th,td,hr,button,
+footer,header,hgroup,menu,nav,section{margin:0;padding:0;}
+header,footer,section,article,aside,nav,hgroup,address,figure,figcaption,menu,details{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{text-align:left;font-weight:normal;}
+html,body,fieldset,img,iframe,abbr{border:0;}
+html{-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;}
+i,em{font-style:normal;}
+ol,ul,li{list-style:none;}
+h1,h2,h3,h4,h5,h6,small{font-size:100%;font-weight:normal}
+textarea{overflow:auto;resize:none;}
+label{cursor:default;}
+a,button{cursor:pointer;}
+a,a:hover{text-decoration:underline;}
+.h_nav li a,.h_nav li a:hover{text-decoration:none;}
+.per_drop a,.per_drop a:hover{text-decoration:none;}
+.d_boxL li a,.d_boxL li a:hover{text-decoration:none;}
+iframe{	display: block;}
+input[type="submit"]{ border:none;}
+button,input,select,textarea{font-size: 100%; border: 0;}
+button[disabled],html input[disabled]{cursor: default;}
+input[type="checkbox"],input[type="radio"] {padding:0;box-sizing:border-box; vertical-align:-2px; margin:0px 3px 0px 0px; cursor:pointer;}
+.inline-block {display: inline-block; *display: inline; zoom: 1;}
+::-webkit-input-placeholder{color:#999;}
+:-moz-placeholder{ color:#999;}
+::-moz-placeholder{color:#999;}
+:-ms-input-placeholder{color:#999;}
+a {outline: none;}
+
+.clearfix:before,.clearfix:after{content:''; display:block;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+
+.tal{text-align:left;}
+.tac{text-align:center;}
+.tar{text-align:right;}
+
+.fl{float:left;}
+.fr{float:right;}
+
+.fs8{font-size:8px;}
+.fs10{font-size:10px;}
+.fs12{font-size:12px;}
+.fs14{font-size:14px;}
+.fs16{font-size:16px;}
+.fs18{font-size:18px;}
+.fs20{font-size:20px;}
+.fs20{font-size:22px;}
+
+.cpt{cursor:pointer;}
+.cdf{cursor: default;}
+.fwb{font-weight:bold;font-family:'simsun';}
+.fsi{font-style:italic;}
+.tdl{text-decoration:line-through;}
+
+.mg5{margin:5px;}
+.mg10{margin:10px;}
+.mg15{margin:15px;}
+.mg20{margin:20px;}
+
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt25{margin-top:25px;}
+.mt30{margin-top:30px;}
+.mt40{margin-top:40px;}
+.mt45{margin-top:45px;}
+.mt50{margin-top:50px;}
+
+.mr5{margin-right:5px;}
+.mr10{margin-right:10px;}
+.mr15{margin-right:15px;}
+.mr20{margin-right:20px;}
+
+.mb5{margin-bottom:5px;}
+.mb10{margin-bottom:10px;}
+.mb15{margin-bottom:15px;}
+.mb20{margin-bottom:20px;}
+.mb25{margin-bottom:25px;}
+.mb30{margin-bottom:30px;}
+.mb35{margin-bottom:35px;}
+.mb40{margin-bottom:40px;}
+.mb45{margin-bottom: 45px;}
+.mb50{margin-bottom: 50px;}
+.mb55{margin-bottom: 55px;}
+.mb60{margin-bottom: 60px;}
+.mb65{margin-bottom: 65px;}
+
+.ml5{margin-left:5px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml30{margin-left:30px;}
+.ml35{margin-left:35px;}
+.ml40{margin-left:40px;}
+.ml50{margin-left:50px;}
+.ml90{margin-left:90px;}
+
+.pd5{padding:5px;}
+.pd10{padding:10px;}
+.pd15{padding:15px;}
+.pd20{padding:20px;}
+
+.pt5{padding-top:5px;}
+.pt10{padding-top:10px;}
+.pt15{padding-top:15px;}
+.pt20{padding-top:20px;}
+.pt25{padding-top:25px;}
+
+.pr5{padding-right:5px;}
+.pr10{padding-right:10px;}
+.pr15{padding-right:15px;}
+.pr20{padding-right:20px;}
+.pr30{padding-right:30px;}
+
+.pb5{padding-bottom:5px;}
+.pb10{padding-bottom:10px;}
+.pb15{padding-bottom:15px;}
+.pb20{padding-bottom:20px;}
+.pb25{padding-bottom:25px;}
+.pb40{padding-bottom:40px;}
+.pb45{padding-bottom:45px;}
+
+.pl5{padding-left:5px;}
+.pl10{padding-left:10px;}
+.pl15{padding-left:15px;}
+.pl20{padding-left:20px;}
+.pl25{padding-left:25px;}
+.pl30{padding-left:30px;}
+.pl40{padding-left:40px;}
+.pl50{padding-left:50px;}
+
+.pos_rel{position: relative;}
+.pos_abs{ position: absolute;}
+
+.dib{display:inline-block;}
+.db{display: block;}
+.di{display: inline;}
+.dn{display: none;}
+
+.over{overflow: hidden;}
+.psa{position: absolute;}
+.psr{position: relative;}
+.psf{position: fixed;}
+
+.ffs {font-family:'simsun';}

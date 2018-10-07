@@ -1,0 +1,174 @@
+
+body{
+	background: #FFFFFF;
+	min-width: 1200px;
+}
+#wrapper{
+	height: 100%;
+}
+.s-container{
+    position: fixed;
+    _position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    min-width: 1000px;
+    z-index: -10;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    zoom: 1;
+    background: url(../img/login_bg.jpg) no-repeat center top;
+}
+
+.w1200{
+	width: 1200px;
+	margin: 0 auto;
+}
+.header{
+	overflow: hidden;
+	width: 100%;
+	background: #C61D22;
+}
+
+.headleft{ float:left; width: 510px; height: 80px; background: url(../img/logoL.png) no-repeat left 14px;}
+.headright{ float:right; line-height: 80px;}
+.header .headright a{ text-decoration:none; color:#FFFFFF; font-size:14px; margin: 0 1px;}
+.header .headright a:hover{
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+
+/*登录框*/
+.s-Main{
+	width: 100%;
+	height: 100%;
+	 /* min-height: 293px; */
+	position: relative;
+}
+.s-login{
+	height: 100%;
+}
+.s-loginM{
+	position: relative;
+    top: 50px;
+    left: 50%;
+    margin-left: -600px;
+}
+/*登录框*/
+.login_infor{
+	overflow: hidden;
+	margin: 30px 0;	
+}
+
+.loginImg{
+	max-width: 601px;
+	max-height: 487px;
+	float: left;
+}
+.loginImg img{
+	width: 100%;
+	height: 100%;
+}
+.loginpotion{ 
+	float:right; 
+	width: 360px; 
+	text-align: center; 
+	height: 390px; 
+	background: #FFFFFF; 
+	margin: 30px 20px 10px 0;
+	box-shadow:0px 2px 20px rgba(0,0,0,0.5);
+}
+.logintext{
+	width: 100%;
+	background: url(../img/login_tt.png) repeat-x top left;
+	height: 69px;
+	border-bottom: 1px solid #c2c3c5;
+	font: 200 22px/70px "microsoft yahei";
+	color: ;
+}
+.loginpotion label{ color: #00569e;float: left; height: 45px; line-height: 30px; }
+.loginpotion input{
+	width: 254px; 
+	height: 34px; 
+	font-size: 14px; 
+	color: #666; 
+	padding-left: 5px; 
+	border:1px solid #c2c2c2;
+	margin-bottom: 20px;
+	border-radius: 3px;
+	padding-left: 30px;
+	background: url(../img/logo_icon.png) no-repeat 5px 7px;
+}
+.loginpotion input:hover,.loginpotion input:focus,.loginpotion input:visited{
+	border:1px solid #ff7944;
+}
+.loginpotion input:nth-child(2){
+	background: url(../img/logo_icon.png) no-repeat 5px -55px;
+}
+.loginpotion input:nth-child(3){
+	
+}
+
+.yanzh_inp{
+	height: 46px; 
+	margin-left: 37px;
+	overflow: hidden;
+}
+.loginpotion .yanzh_inp input{
+	background: url(../img/logo_icon.png) no-repeat 6px -115px;
+}
+.yanzh_inp .yanzh{ width: 112px;}
+.changcolor:link,.changcolor:visited{ color: #358adc; font-size: 12px;}
+.logbtn button{
+	width:286px; 
+	height:40px;
+	color: #FFF; 
+	font-size: 18px; 
+	background: #C61D22; 
+	border-radius: 3px;
+	margin-top: 14px;
+	padding-left:0;
+	cursor:pointer;
+}
+.logbtn button:hover{
+	background: #F5292C;
+}
+.inp_checkbox {
+	text-align: left;
+	margin-left: 37px;
+	overflow: hidden;
+}
+.inp_checkbox input{
+	width: 14px;
+	height: 14px;
+	border: 1px solid #c2c2c2;
+}
+.login_infor a,.login_infor em{
+	color: #9a9a9a;
+	font: 400 14px/40px "microsoft yahei";
+}
+.login_infor a:hover,.header a:hover{
+	color: #ea6603;
+}
+
+/*底部*/
+.footer {
+    width: 100%;
+    position: absolute;
+    z-index: 3;
+    bottom: 0px;
+    left: 0;
+    overflow: hidden;
+    zoom: 1;
+    margin: 0;
+    font:200 12px/60px "microsoft yahei"; 
+	text-align:center;
+	color: #ffffff; 
+	background: #252525;
+	min-width: 1200px;
+}
+

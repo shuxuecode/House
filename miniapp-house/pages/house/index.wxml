@@ -1,0 +1,60 @@
+<!--pages/house/index.wxml-->
+
+<view class="search-area">
+  <input class="search-txt" name="keyword" placeholder="{{placeholderText}}" maxlength="10" confirm-type="search" bindconfirm="search" />
+</view>
+
+
+<!-- 筛选条件 -->
+<!--选项卡-->
+<view class="tabTit box tc bg_f">
+  <view class="flex1{{!tab[index]?' active':''}}" wx:for="{{tabTxt}}" wx:key="" data-index="{{index}}" bindtap="filterTab">
+    <text>{{item}}</text>
+    <image src="/images/arrow.png"></image>
+  </view>
+</view>
+
+<!--筛选项-->
+<view class="tabLayer tc" hidden="{{tab[0]}}">
+  <text class="{{area_type==''?'active':''}}" data-id="" data-index="0" data-txt="地区" bindtap="filter">不限</text>
+  <text class="{{area_type==item.id?'active':''}}" wx:for="{{filterList.areaTypeList}}" wx:key="" data-id="{{item.id}}" data-index="0" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+
+<view class="tabLayer tc" hidden="{{tab[1]}}">
+  <text class="{{rent_type==''?'active':''}}" data-id="" data-index="1" data-txt="租金" bindtap="filter">不限</text>
+  <text class="{{rent_type==item.id?'active':''}}" wx:for="{{filterList.rentTypeList}}" wx:key="" data-id="{{item.id}}" data-index="1" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+
+<view class="tabLayer tc" hidden="{{tab[2]}}">
+  <text class="{{order_type==''?'active':''}}" data-id="" data-index="2" data-txt="排序" bindtap="filter">不限</text>
+  <text class="{{order_type==item.id?'active':''}}" wx:for="{{filterList.orderTypeList}}" wx:key="" data-id="{{item.id}}" data-index="2" data-txt="{{item.name}}" bindtap="filter">{{item.name}}</text>
+</view>
+<!--筛选项 end-->
+
+<!-- 列表展示区域 -->
+<view wx:for="{{dataList}}" wx:key="dataListObj">
+
+  <view class="main" bindtap="gotoDetail" data-id="{{item.houseId}}">
+    <view class="house-img">
+      <image mode="widthFix" src="{{item.imgUrl}}" style="width:100%; height:100%;"></image>
+    </view>
+    <view class="house-detail">
+      <view class="t-text-1">{{item.summary}}</view>
+      <view class="t-text-2">{{item.village}} - {{item.districtName}}</view>
+      <view class="house-price">
+        <view class="price-icon"></view>
+        <view class="price-text">{{item.rental}} 元/月</view>
+      </view>
+      <!-- 收藏按钮 -->
+      <view class="like">
+        <image src='/images/heart_love_32px.png' catchtap='likeHouse' data-id="{{item.houseId}}"></image>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<!-- 底部提示信息 -->
+<view class="btm-view" hidden="{{nomore}}">
+  <text>没有更多信息了</text>
+</view>

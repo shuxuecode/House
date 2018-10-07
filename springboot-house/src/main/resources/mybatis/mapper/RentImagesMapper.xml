@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjz.dao.RentImagesMapper">
+    <resultMap id="BaseResultMap" type="com.sjz.entity.RentImages">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="house_id" jdbcType="BIGINT" property="houseId"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="img_url" jdbcType="VARCHAR" property="imgUrl"/>
+        <result column="del" jdbcType="INTEGER" property="del"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="creator_id" jdbcType="VARCHAR" property="creatorId"/>
+        <result column="creator_name" jdbcType="VARCHAR" property="creatorName"/>
+        <result column="updater_id" jdbcType="VARCHAR" property="updaterId"/>
+        <result column="updater_name" jdbcType="VARCHAR" property="updaterName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, house_id, sort, img_url, del, create_time, update_time, creator_id, creator_name, 
+    updater_id, updater_name
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from rent_images
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from rent_images
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.sjz.entity.RentImages">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rent_images (house_id, sort, img_url,
+        del, create_time, update_time,
+        creator_id, creator_name, updater_id,
+        updater_name)
+        values (#{houseId,jdbcType=BIGINT}, #{sort,jdbcType=INTEGER}, #{imgUrl,jdbcType=VARCHAR},
+        #{del,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP},
+        #{creatorId,jdbcType=VARCHAR}, #{creatorName,jdbcType=VARCHAR}, #{updaterId,jdbcType=VARCHAR},
+        #{updaterName,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.sjz.entity.RentImages">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rent_images
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="houseId != null">
+                house_id,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="imgUrl != null">
+                img_url,
+            </if>
+            <if test="del != null">
+                del,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="creatorId != null">
+                creator_id,
+            </if>
+            <if test="creatorName != null">
+                creator_name,
+            </if>
+            <if test="updaterId != null">
+                updater_id,
+            </if>
+            <if test="updaterName != null">
+                updater_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="houseId != null">
+                #{houseId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="imgUrl != null">
+                #{imgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="del != null">
+                #{del,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatorId != null">
+                #{creatorId,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorName != null">
+                #{creatorName,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterId != null">
+                #{updaterId,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterName != null">
+                #{updaterName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.sjz.entity.RentImages">
+        update rent_images
+        <set>
+            <if test="houseId != null">
+                house_id = #{houseId,jdbcType=BIGINT},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=INTEGER},
+            </if>
+            <if test="imgUrl != null">
+                img_url = #{imgUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="del != null">
+                del = #{del,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatorId != null">
+                creator_id = #{creatorId,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorName != null">
+                creator_name = #{creatorName,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterId != null">
+                updater_id = #{updaterId,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterName != null">
+                updater_name = #{updaterName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sjz.entity.RentImages">
+    update rent_images
+    set house_id = #{houseId,jdbcType=BIGINT},
+      sort = #{sort,jdbcType=INTEGER},
+      img_url = #{imgUrl,jdbcType=VARCHAR},
+      del = #{del,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=VARCHAR},
+      creator_name = #{creatorName,jdbcType=VARCHAR},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      updater_name = #{updaterName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+    <cache/>
+
+    <!-- mybatis-generator:generate end -->
+    <!-- extended definition begin -->
+
+    <sql id="Base_Where_Clause">
+        <where>
+            1=1
+            <if test="search.del != null">
+                and del = #{search.del,jdbcType=INTEGER}
+            </if>
+            <if test="search.houseId != null">
+                and house_id = #{search.houseId,jdbcType=BIGINT}
+            </if>
+            <if test="search.houseIds != null and search.houseIds.size() > 0">
+                and house_id in
+                <foreach item="item" index="index" collection="search.houseIds" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectByParams" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM rent_images
+        <include refid="Base_Where_Clause"/>
+    </select>
+
+
+
+</mapper>

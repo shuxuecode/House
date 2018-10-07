@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>点击地图事件</title>
+<style type="text/css">
+*{
+    margin:0px;
+    padding:0px;
+}
+body, button, input, select, textarea {
+    font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+}
+p{
+    width:603px;
+    padding-top:3px;
+    overflow:hidden;
+}
+#container {
+   min-width:603px;
+   min-height:767px;
+}
+</style>
+<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+<script>
+var init = function() {
+    var map = new qq.maps.Map(document.getElementById("container"),{
+        center: new qq.maps.LatLng(39.916527,116.397128),
+        zoom: 13
+    });
+    //添加监听事件
+    qq.maps.event.addListener(map, 'click', function() {
+        //alert('您点击了地图.');
+      console.log(this)
+    });
+}
+</script>
+</head>
+<body onload="init()">
+<div id="container"></div>
+<p>给地图绑定了点击事件，当点击地图时，会弹出相应信息。</p>
+</body>
+</html>

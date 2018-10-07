@@ -1,0 +1,151 @@
+*{
+	font:200 12px/24px "microsoft yahei"; 
+	
+}
+
+.w1200{
+	width:1200px;
+	margin: 0 auto;
+}
+/* 头部 */
+.header{
+	width: 100%;
+	background: #C61D22;
+}
+.container-fluid{
+	height:68px;
+}
+.header .nav>li>a{
+	padding:0 24px;
+	color:#ffffff;
+	font:200 18px/68px "microsoft yahei"; 
+	text-decoration: none;
+}
+.header .nav>li>a:hover,.header .nav>li>a:focus{
+	background: #A60F11;
+}
+.header .nav .open>a,.header .nav .open>a:hover,.header .nav .open>a:focus,.header .nav>li.active{
+	background: #A60F11;
+}
+
+.header .dropdown-menu{
+	padding:0;
+}
+.header .nav .dropdown-menu>li>a{
+	height:48px;
+	text-align: center;
+	font:200 16px/48px "microsoft yahei"; 
+	text-decoration: none;
+}
+.header .nav .dropdown-menu>li>a:hover{
+	background:#F5F6FA;
+	color:#c61d22;
+}	
+.header .navbar-text{
+	color:#ffffff;
+	line-height: 36px;
+	text-decoration: none;
+}
+.header .navbar-text:hover{
+	color:#ffffff;
+}
+
+/* 底部 */
+.foottxt{
+	font:200 12px/60px "microsoft yahei"; 
+	text-align:center;
+	color: #ffffff; 
+    width: 100%;
+	background: #252525;
+	position: fixed;
+	bottom:0;
+	z-index: 999999;
+}
+
+
+
+/*底部*/
+.footer {
+    width: 100%;
+    position: fixed;
+    z-index: 999999999;
+    bottom: 0px;
+    left: 0;
+    overflow: hidden;
+    zoom: 1;
+    margin: 0;
+    font:200 12px/60px "microsoft yahei"; 
+	text-align:center;
+	color: #ffffff; 
+	background: #252525;
+	min-width: 1200px;
+}
+
+/* 主体 */
+.main{
+	background: #ffffff;
+}
+.input-group{
+	margin-right: 10px;
+    padding-bottom: 20px;
+    float: left;
+}
+.panel{
+	border-radius:0;
+	padding:20px;
+}
+.table th{
+	background: #e1e1e1;
+}
+.table th>div{
+	font-size:14px;
+}
+
+
+
+/*  */
+.modal-title{
+	font-size: 16px;
+}
+
+
+/* 为了解决Bootstrap模态框(modal)垂直居中的问题 start */
+/* 将div完美垂直居中:div>tb>tc>div */
+/* html结构需调整： 
+<div class="modal">
+	<div class='modal-tb'>
+		<div class='modal-tc'>
+			<div class="modal-dialog">
+			......
+			</div>
+		</div>
+	</div>
+</div> 
+*/
+.modal-tb {
+	display: table;
+	pointer-events: none;
+	width: 100%;
+	height: 100%;
+}
+.modal-tb>.modal-tc {
+	display: table-cell;
+	pointer-events: none;
+	vertical-align: middle;
+}
+.modal-tb>.modal-tc>div {
+	pointer-events: auto;
+}
+/* 为了解决Bootstrap模态框(modal)垂直居中的问题 end */
+
+/* 避免模态框过高导致下面显示不全的问题  */
+.modal-dialog {
+    margin: 30px auto 100px;
+}
+
+
+/* 重新定义my97时间框的样式 */
+.Wdate {
+    border: 1px solid #ccc;
+    height: inherit;
+}

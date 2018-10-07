@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title> New Document </title>
+  <meta name="Generator" charset="utf-8">
+
+ </head>
+
+ <body>
+              <input name="tupian" id="tupian"  type="file" class="form-control" style="width:250px;" />
+
+
+<script type="text/javascript" src="../jquery.min.js"></script>
+
+
+<script type="text/javascript" src="jquery.ui.widget.js"></script>
+<script type="text/javascript" src="jquery.iframe-transport.js"></script>
+<script type="text/javascript" src="jquery.fileupload.js"></script>
+<script type="text/javascript" src="jquery.fileupload-process.js"></script>
+<script type="text/javascript" src="jquery.fileupload-validate.js"></script>
+
+ </body>
+
+
+ <script type="text/javascript">
+$('#tupian').fileupload({
+            url : '/upload/addImage',
+            dataType: 'json',
+            formData:{houseId:1},
+			//acceptFileTypes: /(jpg)|(jpeg1)|(png1)|(gif1)$/i, // Allowed file types
+
+			// disableImageResize: false,
+			// imageMaxWidth: 800,
+			// imageMaxHeight: 800,
+			// imageCrop: true, // Force cropped images
+
+            add: function (e, data) {
+                var uploadErrors = [];
+                // console.log(data.originalFiles[0]['size']) ;
+                /* if (data.originalFiles[0]['size'] > 1*1024*1024) {
+                      uploadErrors.push('上传文件不能超过1M');
+                    } */
+                var acceptFileTypes = /(\.|\/)(jpe?g|png)$/i;
+                if(!acceptFileTypes.test(data.originalFiles[0]['name'])) {
+                    uploadErrors.push('文件类型不正确(jpg|jpeg|png)！');
+                }
+                /*
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    console.log('123')
+                    console.log(this)
+                    //加载图片获取图片真实宽度和高度
+                    var image = new Image();
+                    image.onload=function(){
+                        var width = image.width;
+                        var height = image.height;
+                        console.log(image)
+                        console.log(width)
+                        console.log(height)
+                        if(true){
+                            alert('请选择宽高比为4:3的图片');
+                            data.abort();
+                        }
+                    }
+                    image.src= e.target.result;
+                }
+                reader.readAsDataURL(data.files[0])
+                */
+                if(uploadErrors.length > 0) {
+                    alert(uploadErrors.join("\n"));
+                } else {
+                        $("#selectImg").hide();
+                        $("#startUpload").text("上传");
+                        $("#startUpload").show();
+                        $("#startUpload").click(function(){
+
+                            $("#startUpload").text("上传中...");
+                            // 触发上传
+                            data.submit();
+                            $('#startUpload').unbind('click'); // 立即解绑，避免重复绑定事件
+                        });
+                }
+            },
+            done: function (e, data) {
+                if(data.result.code == 200){
+                    var obj=data.result.data;
+                    $('#table').bootstrapTable('insertRow', {
+                        index: 10,
+                        row: obj
+                    });
+                }else{
+                    alert("上传失败")
+                }
+                console.log(data)
+                $("#selectImg").show();
+                // $("#startUpload").text("请选择一种图片");
+                $("#startUpload").text("上传");
+                $("#startUpload").hide();
+            }
+            // 进度条
+            ,progressall: function(e, data){
+                // var progress = parseInt(data.loaded / data.total * 100, 10);
+                // $('#progress1').css('width', progress + '%');
+                // //
+                // if(progress == 100){
+                //     setTimeout(function(){
+                //         $('#progress1').css('width', '0');
+                //     },2000);
+                // }
+            }
+        });
+ </script>
+</html>

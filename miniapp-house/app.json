@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/house/index",
+    "pages/detail/index",
+    "pages/favorite/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/house/index",
+        "text": "热门房源",
+        "iconPath": "image/icon_house.png",
+        "selectedIconPath": "image/icon_house_HL.png"
+      },
+      {
+        "pagePath": "pages/favorite/index",
+        "iconPath": "image/icon_like.png",
+        "selectedIconPath": "image/icon_like_HL.png",
+        "text": "我的收藏"
+      },
+      {
+        "pagePath": "pages/about/index",
+        "iconPath": "image/wechat.png",
+        "selectedIconPath": "image/wechatHL.png",
+        "text": "租房流程"
+      }
+    ]
+  },
+  "debug": false
+}

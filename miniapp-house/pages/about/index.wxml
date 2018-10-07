@@ -1,0 +1,30 @@
+<!--pages/about/index.wxml-->
+<view>
+  <text class='title'>租房流程及注意事项</text>
+</view>
+<view>
+  <text class='li'>一、搜索房源</text>
+  <text class='txt'>用户可以在“热门房源”查看最新房源，也可以通过“关键字”“地区”“租金”“排序”按条件搜索</text>
+  <image mode="widthFix" src="/images/about/1.png" style='width:70%'></image>
+</view>
+<view>
+  <text class='li'>二、浏览房源详细信息</text>
+  <text class='txt'>在搜索结果里面点击房源，可以查看房源更多的信息，也可以点击下面的电话联系房东或中介</text>
+  <image mode="widthFix" src="/images/about/2.png" style='width:70%'></image>
+</view>
+<view>
+  <text class='li'>三、收藏房源（需用户登录）</text>
+  <text class='txt'>对于有意向的房源，可以先添加的“我的收藏”，以便下次查找浏览</text>
+  <image mode="widthFix" src="/images/about/3.png" style='width:70%'></image>
+</view>
+<view>
+  <text class='li'>四、线下看房</text>
+  <text class='txt'>对于意向房源，用户可以联系房东或中介，通过电话或微信再次确认房源情况并预约线下看房时间</text>
+</view>
+<view>
+  <text class='li'>五、房屋签约</text>
+  <text class='txt'>如果用户对房源满意后可以选择当面签约，填写相关的合同等</text>
+</view>
+<view>
+
+</view>

@@ -1,0 +1,70 @@
+<!-- 房屋详情页面 -->
+<view class="backCls" bindtap="goBack">返回上一页</view>
+
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{images}}" wx:for-index="index" wx:key="">
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill" data-imgurl="{{item.url}}" bindtap="swiperClick" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="house-main">
+  <view class='house-summary'>{{house.summary}}</view>
+  <view class='house-date'>发布：{{house.publishDate}}</view>
+  <view class='house-pv'>浏览：{{house.lookNum}}次</view>
+</view>
+
+<!--  -->
+<view class='h-data'>
+  <view class='h-hx v-width'>户型</view>
+  <view class='h-zj v-width'>租金</view>
+  <view class='h-ht v-width'>{{house.houseType}}</view>
+  <view class='h-rental v-width'>{{house.rental}}元/月</view>
+</view>
+
+<!--  -->
+<view class='house-detail'>
+  <view class='hd v-width'>小区：{{house.village}}</view>
+  <view class='hd v-width'>面积：{{house.houseArea}}</view>
+  <!--  -->
+  <view class='hd v-width'>楼层：{{house.houseFloor}}</view>
+  <view class='hd v-width'>付款：{{house.payMode}}</view>
+  <!--  -->
+  <view class='hd v-width'>朝向：{{house.direction}}</view>
+  <view class='hd v-width'>装修：{{house.decoration}}</view>
+  <!--  -->
+  <view class='h-address'>地址：{{house.address}}</view>
+</view>
+
+<!--  -->
+<view style="display:{{showMap}}; justify-content:center; border-top:1rpx solid #ccc; border-bottom:1rpx solid #ccc;" >
+  <map id="myMap" style="width: 90%; height: 600rpx;" 
+  longitude="{{longitude}}" 
+  latitude="{{latitude}}" 
+  scale="15" markers="{{markers}}" bindmarkertap="markertap" controls="{{controls}}"></map>
+</view>
+
+<view class='h-desc'>房屋描述</view>
+
+<view class='detail-txt'>
+  <text>{{house.detail}}</text>
+</view>
+
+
+<!-- <button open-type="contact">进入客服会话</button> -->
+
+
+<view style="height:100rpx;">
+  <!--占位-->
+</view>
+<cover-view class="toolbar">
+  <cover-view class="goto-back" bindtap="gotoHome">{{house.personName}}</cover-view>
+  <cover-view class="wechat" bindtap="likeStar" data-id="{{house.id}}">
+    <cover-view>
+      <cover-image class='star-cls' src="{{starUrl}}"></cover-image>
+      <cover-view class='star-txt'>{{starTxt}}</cover-view>
+    </cover-view>
+  </cover-view>
+  <cover-view class="phone" bindtap="call">电话</cover-view>
+</cover-view>

@@ -1,0 +1,146 @@
+
+body{
+	background: #f5f5f5;
+	color: #222222;
+	font: 400 14px/30px "microsoft yahei";
+}
+.w1200{
+	width: 1200px;
+	margin: auto;
+}
+
+.header{
+	height: 80px;
+	background: #C61D22;
+}
+.footer{
+	font: 200 14px/60px simsun;
+	background: #252525;
+	text-align: center;
+	color: #ffffff;
+}
+/*面包屑*/
+.breadcrumb{
+	margin: 0;
+	font: 400 12px/30px "microsoft yahei";
+	padding: 0;
+}
+.breadcrumb a,.breadcrumb>.active{
+	color: #222222;
+}
+/*中间内容*/
+.main{
+	background: #FFFFFF;
+	min-height: 500px;
+	border: 1px solid #E8E8E8;
+	margin-bottom: 100px;
+}
+
+
+/*注册页 one*/
+.regist_one{
+	width: 750px;
+	height: 290px;
+	margin: 100px auto 0;
+}
+.regist_one p{
+	color: #858585;
+	text-align: center;
+}
+.regist_one dl{
+	width: 358px;
+	height: 98px;
+	border: 1px solid #E3E3E3;
+	border-radius: 5px;
+	float: left;
+	cursor: pointer;
+}
+.regist_one dl.active{
+	background: #f9f9f9;
+}
+.regist_one dl dt{
+	float: left;
+}
+.regist_one dl dt img{
+	margin: 18px 28px 0 100px;
+}
+.regist_one dl dd{
+	float: left;
+	font-size: 18px;
+	line-height: 98px;
+}
+/*注册页 two*/
+.reg_forms{
+	padding: 20px;
+}
+.nav-pills{
+	padding-bottom: 20px;
+	border-bottom: 1px solid #CCCCCC;
+}
+.nav>li>a{
+	width: 150px;
+	height: 44px;
+	text-align: center;
+	line-height: 44px;
+	padding: 0 15px;
+	color: #222222;
+    margin-right: 8px;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+	background-color: #428bca;
+}
+
+/*表单验证*/
+.reg_form{
+	width: 1100px;
+	margin: 30px auto;
+}
+.reg_form li{
+	padding: 15px 0 15px 30px;
+	line-height: 32px;
+	overflow: hidden;
+}
+.reg_form label{
+	float: left;
+	width: 100px;
+	font-weight: 400;
+	margin: 0;
+}
+.reg_form span{
+	color: #868686;
+	float: left;
+	margin-left: 30px;
+}
+.reg_form span i{
+	width: 28px;
+	height: 28px;
+	background: url(../img/register/reg_ok.png) no-repeat;
+	float: right;
+	margin-left: 20px;
+}
+.reg_form span .reg_error{
+	background: url(../img/register/reg_error.png) no-repeat;
+}
+.reg_form .form-control{
+	border-radius: 0;
+	width: 342px;
+	height: 32px;
+	float: left;
+}
+
+.reg_liBg{
+	background: #f8f8f8;
+}
+
+
+.reg_btn{
+	text-align: center;
+	margin: 40px auto;
+}
+.reg_btn button{
+	width: 146px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	padding: 0;
+}

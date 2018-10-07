@@ -1,0 +1,22 @@
+/* pages/about/index.wxss */
+page{
+  text-align: center;
+  padding: 24rpx;
+}
+
+.title{
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+
+.li{
+  font-size: 34rpx;
+  font-weight: 600;
+  display: block;
+  text-align: left;
+}
+
+.txt{
+  font-size: 30rpx;
+  display: block;
+}

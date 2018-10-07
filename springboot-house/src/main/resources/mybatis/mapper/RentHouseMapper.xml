@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sjz.dao.RentHouseMapper">
+    <resultMap id="BaseResultMap" type="com.sjz.entity.RentHouse">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="area_code" jdbcType="INTEGER" property="areaCode"/>
+        <result column="district_id" jdbcType="BIGINT" property="districtId"/>
+        <result column="summary" jdbcType="VARCHAR" property="summary"/>
+        <result column="village" jdbcType="VARCHAR" property="village"/>
+        <result column="rental" jdbcType="DECIMAL" property="rental"/>
+        <result column="longitude" jdbcType="VARCHAR" property="longitude"/>
+        <result column="latitude" jdbcType="VARCHAR" property="latitude"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="person_name" jdbcType="VARCHAR" property="personName"/>
+        <result column="telephone" jdbcType="VARCHAR" property="telephone"/>
+        <result column="wechat_id" jdbcType="VARCHAR" property="wechatId"/>
+        <result column="wechat_image" jdbcType="VARCHAR" property="wechatImage"/>
+        <result column="look_num" jdbcType="INTEGER" property="lookNum"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="update_time" jdbcType="TIMESTAMP" property="updateTime"/>
+        <result column="creator_id" jdbcType="VARCHAR" property="creatorId"/>
+        <result column="creator_name" jdbcType="VARCHAR" property="creatorName"/>
+        <result column="updater_id" jdbcType="VARCHAR" property="updaterId"/>
+        <result column="updater_name" jdbcType="VARCHAR" property="updaterName"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, area_code, district_id, summary, village, rental, longitude, latitude, status, person_name,
+    telephone, wechat_id, wechat_image, look_num, create_time, update_time, creator_id, 
+    creator_name, updater_id, updater_name
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from rent_house
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from rent_house
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.sjz.entity.RentHouse">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rent_house (area_code, district_id, summary, village,
+        rental, longitude, latitude,
+        status, person_name, telephone,
+        wechat_id, wechat_image, look_num,
+        create_time, update_time, creator_id,
+        creator_name, updater_id, updater_name
+        )
+        values (#{areaCode,jdbcType=INTEGER}, #{districtId,jdbcType=BIGINT}, #{summary,jdbcType=VARCHAR}, #{village,jdbcType=VARCHAR},
+        #{rental,jdbcType=DECIMAL}, #{longitude,jdbcType=VARCHAR}, #{latitude,jdbcType=VARCHAR},
+        #{status,jdbcType=INTEGER}, #{personName,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR},
+        #{wechatId,jdbcType=VARCHAR}, #{wechatImage,jdbcType=VARCHAR}, #{lookNum,jdbcType=INTEGER},
+        #{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{creatorId,jdbcType=VARCHAR},
+        #{creatorName,jdbcType=VARCHAR}, #{updaterId,jdbcType=VARCHAR}, #{updaterName,jdbcType=VARCHAR}
+        )
+    </insert>
+    <insert id="insertSelective" parameterType="com.sjz.entity.RentHouse">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into rent_house
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="areaCode != null">
+                area_code,
+            </if>
+            <if test="districtId != null">
+                district_id,
+            </if>
+            <if test="summary != null">
+                summary,
+            </if>
+            <if test="village != null">
+                village,
+            </if>
+            <if test="rental != null">
+                rental,
+            </if>
+            <if test="longitude != null">
+                longitude,
+            </if>
+            <if test="latitude != null">
+                latitude,
+            </if>
+            <if test="status != null">
+                status,
+            </if>
+            <if test="personName != null">
+                person_name,
+            </if>
+            <if test="telephone != null">
+                telephone,
+            </if>
+            <if test="wechatId != null">
+                wechat_id,
+            </if>
+            <if test="wechatImage != null">
+                wechat_image,
+            </if>
+            <if test="lookNum != null">
+                look_num,
+            </if>
+            <if test="createTime != null">
+                create_time,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+            <if test="creatorId != null">
+                creator_id,
+            </if>
+            <if test="creatorName != null">
+                creator_name,
+            </if>
+            <if test="updaterId != null">
+                updater_id,
+            </if>
+            <if test="updaterName != null">
+                updater_name,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="areaCode != null">
+                #{areaCode,jdbcType=INTEGER},
+            </if>
+            <if test="districtId != null">
+                #{districtId,jdbcType=BIGINT},
+            </if>
+            <if test="summary != null">
+                #{summary,jdbcType=VARCHAR},
+            </if>
+            <if test="village != null">
+                #{village,jdbcType=VARCHAR},
+            </if>
+            <if test="rental != null">
+                #{rental,jdbcType=DECIMAL},
+            </if>
+            <if test="longitude != null">
+                #{longitude,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null">
+                #{latitude,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status,jdbcType=INTEGER},
+            </if>
+            <if test="personName != null">
+                #{personName,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="wechatId != null">
+                #{wechatId,jdbcType=VARCHAR},
+            </if>
+            <if test="wechatImage != null">
+                #{wechatImage,jdbcType=VARCHAR},
+            </if>
+            <if test="lookNum != null">
+                #{lookNum,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatorId != null">
+                #{creatorId,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorName != null">
+                #{creatorName,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterId != null">
+                #{updaterId,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterName != null">
+                #{updaterName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.sjz.entity.RentHouse">
+        update rent_house
+        <set>
+            <if test="areaCode != null">
+                area_code = #{areaCode,jdbcType=INTEGER},
+            </if>
+            <if test="districtId != null">
+                district_id = #{districtId,jdbcType=BIGINT},
+            </if>
+            <if test="summary != null">
+                summary = #{summary,jdbcType=VARCHAR},
+            </if>
+            <if test="village != null">
+                village = #{village,jdbcType=VARCHAR},
+            </if>
+            <if test="rental != null">
+                rental = #{rental,jdbcType=DECIMAL},
+            </if>
+            <if test="longitude != null">
+                longitude = #{longitude,jdbcType=VARCHAR},
+            </if>
+            <if test="latitude != null">
+                latitude = #{latitude,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                status = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="personName != null">
+                person_name = #{personName,jdbcType=VARCHAR},
+            </if>
+            <if test="telephone != null">
+                telephone = #{telephone,jdbcType=VARCHAR},
+            </if>
+            <if test="wechatId != null">
+                wechat_id = #{wechatId,jdbcType=VARCHAR},
+            </if>
+            <if test="wechatImage != null">
+                wechat_image = #{wechatImage,jdbcType=VARCHAR},
+            </if>
+            <if test="lookNum != null">
+                look_num = #{lookNum,jdbcType=INTEGER},
+            </if>
+            <if test="createTime != null">
+                create_time = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="creatorId != null">
+                creator_id = #{creatorId,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorName != null">
+                creator_name = #{creatorName,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterId != null">
+                updater_id = #{updaterId,jdbcType=VARCHAR},
+            </if>
+            <if test="updaterName != null">
+                updater_name = #{updaterName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.sjz.entity.RentHouse">
+    update rent_house
+    set
+      area_code = #{areaCode,jdbcType=INTEGER},
+      district_id = #{districtId,jdbcType=BIGINT},
+      summary = #{summary,jdbcType=VARCHAR},
+      village = #{village,jdbcType=VARCHAR},
+      rental = #{rental,jdbcType=DECIMAL},
+      longitude = #{longitude,jdbcType=VARCHAR},
+      latitude = #{latitude,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      person_name = #{personName,jdbcType=VARCHAR},
+      telephone = #{telephone,jdbcType=VARCHAR},
+      wechat_id = #{wechatId,jdbcType=VARCHAR},
+      wechat_image = #{wechatImage,jdbcType=VARCHAR},
+      look_num = #{lookNum,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      creator_id = #{creatorId,jdbcType=VARCHAR},
+      creator_name = #{creatorName,jdbcType=VARCHAR},
+      updater_id = #{updaterId,jdbcType=VARCHAR},
+      updater_name = #{updaterName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+    <cache/>
+
+
+    <!-- mybatis-generator:generate end -->
+    <!-- extended definition begin -->
+
+    <sql id="Base_Where_Clause">
+        <where>
+            area_code = #{search.areaCode,jdbcType=INTEGER}
+            <if test="search.status != null">
+                and status = #{search.status,jdbcType=INTEGER}
+            </if>
+            <if test="search.districtId != null">
+                and district_id = #{search.districtId,jdbcType=BIGINT}
+            </if>
+            <if test="search.districtIds != null and search.districtIds.size() > 0">
+                and district_id in
+                <foreach item="item" index="index" collection="search.districtIds" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+
+            <if test="search.ids != null and search.ids.size() > 0">
+                and id in
+                <foreach item="item" index="index" collection="search.ids" open="(" separator="," close=")">
+                    #{item}
+                </foreach>
+            </if>
+
+            <if test="search.rentalStart != null">
+                and rental >= #{search.rentalStart,jdbcType=DECIMAL}
+            </if>
+            <if test="search.rentalEnd != null">
+                and rental &lt;= #{search.rentalEnd,jdbcType=DECIMAL}
+            </if>
+
+
+            <if test="search.summary != null">
+                and summary like concat('%', #{search.summary,jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="search.village != null">
+                and village like concat('%', #{search.village,jdbcType=VARCHAR}, '%')
+            </if>
+
+            <if test="search.searchText != null">
+                and summary like concat('%', #{search.searchText,jdbcType=VARCHAR}, '%')
+                or village like concat('%', #{search.searchText,jdbcType=VARCHAR}, '%')
+            </if>
+            <!--
+                  <if test="search.nowDate != null">
+                    and DATE_FORMAT(expiry_date,'%Y%m%d') > DATE_FORMAT(#{search.nowDate,jdbcType=TIMESTAMP},'%Y%m%d')
+                  </if>
+            -->
+        </where>
+    </sql>
+
+    <select id="selectByParams" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM rent_house
+        <include refid="Base_Where_Clause"/>
+    </select>
+
+    <!-- 查询列表，其中坐标按照由近到远 进行排序 -->
+    <select id="selectListByParams" resultMap="BaseResultMap">
+        SELECT
+            id, area_code, district_id, summary, village, rental, longitude, latitude, status, person_name,
+            telephone, wechat_id, wechat_image, look_num, create_time, update_time, creator_id,
+            creator_name, updater_id, updater_name,
+            abs(CAST(#{search.lng} AS DECIMAL(14,10)) - CAST(longitude AS DECIMAL(14,10))) +
+            abs(CAST(#{search.lat} AS DECIMAL(14,10)) - CAST(latitude AS DECIMAL(14,10))) as n
+        FROM rent_house
+        <where>
+            area_code = #{search.areaCode,jdbcType=INTEGER}
+            <if test="search.status != null">
+                and status = #{search.status,jdbcType=INTEGER}
+            </if>
+            <if test="search.districtId != null">
+                and district_id = #{search.districtId,jdbcType=BIGINT}
+            </if>
+            <if test="search.rentalStart != null">
+                and rental >= #{search.rentalStart,jdbcType=DECIMAL}
+            </if>
+            <if test="search.rentalEnd != null">
+                and rental &lt;= #{search.rentalEnd,jdbcType=DECIMAL}
+            </if>
+            <if test="search.searchText != null">
+                and summary like concat('%', #{search.searchText,jdbcType=VARCHAR}, '%')
+                or village like concat('%', #{search.searchText,jdbcType=VARCHAR}, '%')
+            </if>
+        </where>
+        ORDER BY n
+    </select>
+
+
+    <!--
+      <insert id="insertBatch" parameterType="java.util.List">
+        insert into rent_house (
+        dedit_id, fee_id, organ_id,
+        region_id, expiry_date, remarks,
+        is_del, create_time, update_time, creator_id, creator_name, updater_id,
+        updater_name )
+        values
+        <foreach collection="list" index="index" item="item" separator=",">
+          (
+          #{item.deditId,jdbcType=BIGINT}, #{item.feeId,jdbcType=BIGINT}, #{item.organId,jdbcType=VARCHAR},
+          #{item.regionId,jdbcType=VARCHAR}, #{item.expiryDate,jdbcType=TIMESTAMP}, #{item.remarks,jdbcType=VARCHAR},
+          #{item.isDel,jdbcType=INTEGER}, #{item.createTime,jdbcType=TIMESTAMP}, #{item.updateTime,jdbcType=TIMESTAMP},
+          #{item.creatorId,jdbcType=VARCHAR}, #{item.creatorName,jdbcType=VARCHAR}, #{item.updaterId,jdbcType=VARCHAR},
+          #{item.updaterName,jdbcType=VARCHAR}
+          )
+        </foreach>
+      </insert>
+
+      <update id="updateByParamsSelective">
+        update oas_dedit_fee
+        <set>
+          <if test="entity.isDel != null" >
+            is_del = #{entity.isDel,jdbcType=INTEGER},
+          </if>
+          <if test="entity.updateTime != null" >
+            update_time = #{entity.updateTime,jdbcType=TIMESTAMP},
+          </if>
+          <if test="entity.updaterId != null" >
+            updater_id = #{entity.updaterId,jdbcType=VARCHAR},
+          </if>
+          <if test="entity.updaterName != null" >
+            updater_name = #{entity.updaterName,jdbcType=VARCHAR},
+          </if>
+        </set>
+        <include refid="Base_Where_Clause"/>
+      </update>
+    -->
+</mapper>
