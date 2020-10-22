@@ -24,15 +24,15 @@ public class MailUtil {
     //协议 pop3 smtp
     private static String protocol = "smtp";
     //邮件服务器
-    private static String host = "smtphz.qiye.163.com"; //"smtp.exmail.qq.com";
+    private static String host = ""; //"smtp.exmail.qq.com";
     private static boolean debug = true;
     //用户名和密码
-    private static String username = "oss@qding.me"; // "qding@qding.me";
-    private static String password = "Qd@2014";
+    private static String username = ""; // "";
+    private static String password = "";
     //发件人
-    private static String from = "oss@qding.me";
+    private static String from = "";
     // 收件人
-    private static String recipient = "xiexiyang@qding.me";
+    private static String recipient = "";
 
     //是否需要认证
     private static boolean ifAuth = true;
@@ -162,6 +162,6 @@ public class MailUtil {
 
 
     public static void main(String[] args) {
-        sendMail("zhaoshuxue@qding.me","测试，请忽略","测试邮件");
+        sendMail("","测试，请忽略","测试邮件");
     }
 }

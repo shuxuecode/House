@@ -40,9 +40,9 @@ public class MainTest1 {
 
 
     public static void main2(String[] args) {
-        String appid = "wxd521b31771fdaeaf";
-        String appsecret = "ad1a402382d28d03d1d82a53b043ea65";
-        String code = "071bsgrQ01oup82iGPpQ0Jp2rQ0bsgr4";
+        String appid = "";
+        String appsecret = "";
+        String code = "";
         String url = "https://api.weixin.qq.com/sns/jscode2session?appid=" +
                 appid + "&secret=" +
                 appsecret + "&js_code=" +
