@@ -36,7 +36,7 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("系统 RESTful API")
                 .description("描述")
-                .termsOfServiceUrl("https://www.funimg.top")
+                .termsOfServiceUrl("")
                 .version("1.1.2")
                 .build();
     }
